@@ -1,0 +1,16 @@
+{
+  "name": "learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "BinaryTree.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tri Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^6.3.0",
+    "heap-js": "^2.3.0"
+  }
+}
