@@ -1,6 +1,6 @@
 // Vertical Order Traversal of a Binary Tree
 // https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
-import {TreeNode, generateTree} from "./BinaryTree.js";
+import {generateTree, TreeNode} from "./BinaryTree.js";
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -38,6 +38,6 @@ const verticalTraversal = function(root) {
 };
 
 
-let arr = [1,2,3,4,5,6,7];
+let arr = [1, 2, 3, 4, 5, 6, 7];
 let root = generateTree(arr);
 console.log(verticalTraversal(root))

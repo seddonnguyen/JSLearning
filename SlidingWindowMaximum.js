@@ -10,8 +10,8 @@ const maxSlidingWindow = function(nums, k) {
     let l = 0, r = 0;
     let q = [];
     let result = [];
-    while (r < nums.length) {
-        while (q.length > 0 && nums[q[q.length - 1]] < nums[r]) {
+    while(r < nums.length) {
+        while(q.length > 0 && nums[q[q.length - 1]] < nums[r]) {
             q.pop();
         }
         q.push(r);
@@ -25,8 +25,8 @@ const maxSlidingWindow = function(nums, k) {
         }
         r++;
     }
-    return  result;
+    return result;
 };
 
-let nums = [7,2,4], k = 2;
+let nums = [7, 2, 4], k = 2;
 console.log(maxSlidingWindow(nums, k));

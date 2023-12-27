@@ -11,5 +11,5 @@ const topKFrequent = function(nums, k) {
     return res;
 };
 
-let nums = [1,1,1,2,2,3], k = 2;
+let nums = [1, 1, 1, 2, 2, 3], k = 2;
 console.log(topKFrequent(nums, k));

@@ -27,5 +27,5 @@ const canCross = function(stones) {
     return lastStoneJumps.size > 0;
 };
 
-let stones = [0,1,3,5,6,8,12,17];
+let stones = [0, 1, 3, 5, 6, 8, 12, 17];
 console.log(canCross(stones));

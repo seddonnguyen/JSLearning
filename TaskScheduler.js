@@ -17,12 +17,12 @@ const leastInterval = (tasks, n) => {
         maxHeap.add(f);
     }
 
-    while(maxHeap.size() > 0 ||  queue.length > 0) {
+    while(maxHeap.size() > 0 || queue.length > 0) {
 
         time++;
 
         if(maxHeap.size() > 0) {
-            let  current = maxHeap.pop();
+            let current = maxHeap.pop();
             current--;
             if(current > 0) {
                 queue.push([current, time + n]);
@@ -37,6 +37,6 @@ const leastInterval = (tasks, n) => {
     return time;
 };
 
-let tasks = ["A","A","A","B","B","B"], n = 2;
+let tasks = ["A", "A", "A", "B", "B", "B"], n = 2;
 
 console.log(leastInterval(tasks, n))

@@ -45,4 +45,4 @@ const solveNQueens = n => {
     return res;
 };
 
-solveNQueens(4).map(b => b.join('\n')).forEach(b => console.log(b,'\n'))
+solveNQueens(4).map(b => b.join('\n')).forEach(b => console.log(b, '\n'))

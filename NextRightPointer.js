@@ -19,7 +19,7 @@ let connect = root => {
     let curr = root;
     let next = root ? root.left : null;
 
-    while (curr && next) {
+    while(curr && next) {
         curr.left.next = curr.right;
         if(curr.next) {
             curr.right.next = curr.next.left;

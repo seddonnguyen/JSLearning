@@ -73,7 +73,5 @@ function reverseKGroups(head, k) {
 // console.log(linkList2Array(reverseKGroups(head, 3)));
 
 export {
-    ListNode,
-    buildLinkList,
-    linkList2Array
+    ListNode, buildLinkList, linkList2Array
 }

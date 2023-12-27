@@ -1,7 +1,7 @@
 // Implement Trie (Prefix Tree)
 // https://leetcode.com/problems/implement-trie-prefix-tree/
 
-function TrieNode ()  {
+function TrieNode() {
     this.children = new Map();
     this.endOfWord = false;
 }

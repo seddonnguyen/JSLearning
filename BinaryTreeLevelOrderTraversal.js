@@ -1,6 +1,6 @@
 // Binary Tree Level Order Traversal
 // https://leetcode.com/problems/binary-tree-level-order-traversal/description/
-import {TreeNode, generateTree} from "./BinaryTree.js";
+import {generateTree, TreeNode} from "./BinaryTree.js";
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -35,6 +35,6 @@ const levelOrder = function(root) {
     return res;
 };
 
-let arr = [3,9,20,null,null,15,7];
+let arr = [3, 9, 20, null, null, 15, 7];
 let root = generateTree(arr);
 console.log(levelOrder(root));

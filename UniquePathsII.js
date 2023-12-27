@@ -16,7 +16,7 @@ const uniquePathsWithObstacles = function(obstacleGrid) {
             if(obstacleGrid[r][c]) {
                 dp[c] = 0;
             } else if(c + 1 < COLS) {
-                dp[c] += dp[c+1];
+                dp[c] += dp[c + 1];
             }
 
         }
@@ -24,5 +24,5 @@ const uniquePathsWithObstacles = function(obstacleGrid) {
     return dp[0];
 };
 
-let obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]];
+let obstacleGrid = [[0, 0, 0], [0, 1, 0], [0, 0, 0]];
 console.log(uniquePathsWithObstacles(obstacleGrid));
