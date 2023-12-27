@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/course-schedule/
-
 /**
  * @param {number} numCourses
  * @param {number[][]} prerequisites
@@ -49,3 +48,8 @@ const canFinish = (numCourses, prerequisites) => {
     }
     return true;
 };
+
+const numCourses = 2;
+const prerequisites = [[1, 0], [0, 1]];
+
+console.log(canFinish(numCourses, prerequisites));
