@@ -1,4 +1,4 @@
-import {Heap} from 'heap-js';
+const {Heap} = require('heap-js');
 // https://leetcode.com/problems/task-scheduler/
 /**
  * @param {string[]} tasks
@@ -39,4 +39,4 @@ const leastInterval = (tasks, n) => {
 
 let tasks = ["A", "A", "A", "B", "B", "B"], n = 2;
 
-console.log(leastInterval(tasks, n))
+console.log(leastInterval(tasks, n));

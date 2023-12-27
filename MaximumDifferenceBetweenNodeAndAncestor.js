@@ -1,6 +1,6 @@
 // Maximum Difference Between Node and Ancestor
 // https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
-import {generateTree, TreeNode} from "./BinaryTree.js";
+const {generateTree, TreeNode} = require("./BinaryTree.js");
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -31,4 +31,4 @@ const maxAncestorDiff = function(root) {
 
 let arr = [8, 3, 10, 1, 6, null, 14, null, null, 4, 7, 13];
 let root = generateTree(arr);
-console.log(maxAncestorDiff(root))
+console.log(maxAncestorDiff(root));

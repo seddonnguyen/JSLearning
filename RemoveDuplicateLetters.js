@@ -14,7 +14,7 @@ const removeDuplicateLetters = function(s) {
         if(visited.has(c)) {
             freq.set(c, freq.get(c) - 1);
         } else {
-            let lastChar = res[res.length - 1]
+            let lastChar = res[res.length - 1];
             while(res.length > 0 && lastChar > c && freq.get(lastChar) > 0) {
                 visited.delete(res.pop());
             }
@@ -26,5 +26,5 @@ const removeDuplicateLetters = function(s) {
     return res.join("");
 };
 
-let s = "cbacdcbc"
+let s = "cbacdcbc";
 console.log(removeDuplicateLetters(s));

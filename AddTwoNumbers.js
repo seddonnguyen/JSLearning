@@ -1,6 +1,6 @@
 // Add Two Numbers
 // https://leetcode.com/problems/add-two-numbers/description/
-import {buildLinkList, linkList2Array, ListNode} from "./LinkedList.js";
+const {buildLinkList, linkList2Array, ListNode} = require("./LinkedList.js");
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -42,5 +42,5 @@ let arr1 = [2, 4, 3];
 let arr2 = [5, 6, 4];
 let l1 = buildLinkList(arr1);
 let l2 = buildLinkList(arr2);
-let linkList = linkList2Array(addTwoNumbers(l1, l2))
+let linkList = linkList2Array(addTwoNumbers(l1, l2));
 console.log(linkList);

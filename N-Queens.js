@@ -19,7 +19,7 @@ const solveNQueens = n => {
     }
     const backTrack = r => {
         if(r === n) {
-            res.push(board.map(r => r.join("")))
+            res.push(board.map(r => r.join("")));
             return;
         }
 
@@ -40,9 +40,9 @@ const solveNQueens = n => {
             negDiag.delete(r - c);
             board[r][c] = "."
         }
-    }
+    };
     backTrack(0);
     return res;
 };
 
-solveNQueens(4).map(b => b.join('\n')).forEach(b => console.log(b, '\n'))
+solveNQueens(4).map(b => b.join('\n')).forEach(b => console.log(b, '\n'));

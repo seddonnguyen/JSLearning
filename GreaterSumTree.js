@@ -1,6 +1,6 @@
 // Binary Search Tree to Greater Sum Tree
 // https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/description/
-import {generateTree, TreeNode} from "./BinaryTree.js";
+const {generateTree, TreeNode} = require("./BinaryTree.js");
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -20,13 +20,13 @@ let bstToGst = function(root) {
             return;
         }
 
-        dfs(node.right)
+        dfs(node.right);
         let sum = currentSum + node.val;
         node.val = sum;
         currentSum = sum;
         dfs(node.left);
 
-    }
+    };
     dfs(root);
     return root;
 };

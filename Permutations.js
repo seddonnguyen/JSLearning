@@ -1,6 +1,6 @@
 /**
- * @param {number[]} nums
  * @return {number[][]}
+ * @param word
  */
 
 //https://leetcode.com/problems/permutations/description/

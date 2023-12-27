@@ -10,7 +10,7 @@ const buildLinkList = arr => {
         head = new ListNode(arr[i], head);
     }
     return head;
-}
+};
 
 const linkList2Array = head => {
     let res = [];
@@ -19,7 +19,7 @@ const linkList2Array = head => {
         head = head.next;
     }
     return res;
-}
+};
 
 class LinkedListNode {
     constructor(data, next = null) {
@@ -38,7 +38,7 @@ function reverseKGroups(head, k) {
     let start = current;
 
     const reverse = (prev, curr, end) => {
-        let next = null
+        let next = null;
         while(curr !== end) {
             next = curr.next;
             curr.next = prev;
@@ -46,7 +46,7 @@ function reverseKGroups(head, k) {
             curr = next;
         }
         return prev;
-    }
+    };
 
     while(current !== null) {
         let n = 0;
@@ -72,6 +72,6 @@ function reverseKGroups(head, k) {
 //
 // console.log(linkList2Array(reverseKGroups(head, 3)));
 
-export {
+module.exports = {
     ListNode, buildLinkList, linkList2Array
 }

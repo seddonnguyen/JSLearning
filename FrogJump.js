@@ -13,7 +13,7 @@ const canCross = function(stones) {
     map.get(0).add(0);
 
     for(let stone of stones) {
-        let jumps = [...map.get(stone)]
+        let jumps = [...map.get(stone)];
         for(let jump of jumps) {
             for(let jumpDistance of [jump - 1, jump, jump + 1]) {
                 if(jumpDistance > 0 && map.has(stone + jumpDistance)) {

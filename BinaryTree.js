@@ -1,6 +1,6 @@
 function TreeNode(val, left, right) {
-    this.val = (val === undefined ? 0 : val)
-    this.left = (left === undefined ? null : left)
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
     this.right = (right === undefined ? null : right)
 }
 
@@ -15,10 +15,10 @@ const generateTree = arr => {
         }
 
         return new TreeNode(arr[i], helper(2 * i + 1), helper(2 * i + 2));
-    }
+    };
 
     return helper(0);
-}
+};
 
 
 const isValidBST = root => {
@@ -32,7 +32,7 @@ const isValidBST = root => {
         }
 
         return validate(node.left, left, node.val) && validate(node.right, node.val, right);
-    }
+    };
     return validate(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
 };
 
@@ -41,6 +41,6 @@ const isValidBST = root => {
 //let root = generateTree(tree);
 //console.log(isValidBST(root));
 
-export {
+module.exports = {
     TreeNode, generateTree, isValidBST
-}
+};

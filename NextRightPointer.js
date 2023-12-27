@@ -25,7 +25,7 @@ let connect = root => {
             curr.right.next = curr.next.left;
         }
 
-        curr = curr.next
+        curr = curr.next;
         if(!curr) {
             curr = next;
             next = curr.left;

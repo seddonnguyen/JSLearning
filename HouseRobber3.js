@@ -1,5 +1,5 @@
 // Definition of a binary tree node
-import {generateTree} from './BinaryTree.js'
+const {generateTree} = require('./BinaryTree.js');
 
 function rob(root) {
 // [with Root, without Root]
@@ -15,7 +15,7 @@ function rob(root) {
         let withoutRoot = Math.max(...left) + Math.max(...right);
 
         return [withRoot, withoutRoot];
-    }
+    };
     // Replace this placeholder return statement with your code
     return Math.max(...dfs(root));
 }

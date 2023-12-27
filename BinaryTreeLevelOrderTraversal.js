@@ -1,6 +1,6 @@
 // Binary Tree Level Order Traversal
 // https://leetcode.com/problems/binary-tree-level-order-traversal/description/
-import {generateTree, TreeNode} from "./BinaryTree.js";
+const {generateTree, TreeNode} = require("./BinaryTree.js");
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
