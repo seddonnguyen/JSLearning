@@ -9,6 +9,7 @@ const rob = function(nums) {
     let rob2 = 0;
 
     for(let n of nums) {
+        // [rob1, rob2, n, n+1, ...]
         let max = Math.max(rob1 + n, rob2);
         rob1 = rob2;
         rob2 = max;
