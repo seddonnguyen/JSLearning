@@ -28,10 +28,9 @@ const NumMatrix = function(matrix) {
         this.prefixMatrix[row] = [];
         let prefixSum = 0;
         for(let column = 0; column < matrix[0].length; column++) {
-            let current = matrix[row][column];
             let top = row - 1 >= 0 ? this.prefixMatrix[row - 1][column] : 0;
-            prefixSum += column - 1 >= 0 ? matrix[row][column - 1] : 0;
-            this.prefixMatrix[row][column] = current + top + prefixSum;
+            prefixSum += matrix[row][column];
+            this.prefixMatrix[row][column] = top + prefixSum;
         }
     }
 };
