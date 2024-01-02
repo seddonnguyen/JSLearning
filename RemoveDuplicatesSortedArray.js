@@ -35,20 +35,17 @@
  * @return {number}
  */
 const removeDuplicates = function(nums) {
-    let left = 0;
+    let left = 1;
     let right = 1;
 
     while(right < nums.length) {
-        while(right + 1 < nums.length && nums[left] === nums[right]) {
-            right++;
-        }
-        if(nums[left] !== nums[right]) {
-            left++;
+        if(nums[right] !== nums[right - 1]) {
             nums[left] = nums[right];
+            left++;
         }
         right++;
     }
-    return left + 1;
+    return left;
 };
 
 const nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
