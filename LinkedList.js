@@ -74,4 +74,4 @@ function reverseKGroups(head, k) {
 
 module.exports = {
     ListNode, buildLinkList, linkList2Array
-}
+};
