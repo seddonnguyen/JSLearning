@@ -22,7 +22,7 @@
  * @return {number}
  */
 const findDuplicate = function(nums) {
-    let head = nums[0];
+    let head = 0;
     let slow = head;
     let fast = head;
     // Find the cycle.
