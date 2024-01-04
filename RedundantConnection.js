@@ -24,57 +24,16 @@
 // There are no repeated edges.
 // The given graph is connected.
 
+const {UnionFind} = require('./UnionFind.js');
 /**
  * @param {number[][]} edges
  * @return {number[]}
  */
 const findRedundantConnection = function(edges) {
-    const parent = [0];
-    const rank = [1];
-
-    for(let i = 1; i <= edges.length + 1; i++) {
-        parent[i] = i;
-        rank[i] = 1;
-    }
-
-    /**
-     * @param {number} n
-     * @return {number}
-     */
-    const find = n => {
-        let p = parent[n];
-        while(p !== parent[p]) {
-            parent[p] = parent[parent[p]];
-            p = parent[p];
-        }
-        return p;
-    };
-
-    /**
-     * @param {number} n1
-     * @param {number} n2
-     * @return {boolean}
-     */
-    const union = (n1, n2) => {
-        let p1 = find(n1);
-        let p2 = find(n2);
-
-        if(p1 === p2) {
-            return false;
-        }
-
-        if(rank[p1] > rank[p2]) {
-            parent[p2] = p1;
-            rank[p1] += rank[p2];
-        } else {
-            parent[p1] = p2;
-            rank[p2] += rank[p1];
-        }
-        return true;
-    };
+    const unionFind = new UnionFind(edges.length);
 
     for(let [n1, n2] of edges) {
-        if(!union(n1, n2)) {
+        if(!unionFind.union(n1, n2)) {
             return [n1, n2];
         }
     }

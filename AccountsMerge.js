@@ -29,56 +29,19 @@
 // accounts[i][0] consists of English letters.
 // accounts[i][j] (for j > 0) is a valid email.
 
+const {UnionFind} = require('./UnionFind.js');
+
 /**
  * @param {string[][]} accounts
  * @return {string[][]}
  */
 const accountsMerge = function(accounts) {
-    const parent = [0];
-    const rank = [1];
+    const unionFind = new UnionFind(accounts.length);
     const names = [""];
     const emailToAccount = new Map();
     const accountToEmails = new Map();
     const emails = new Set();
 
-    for(let i = 1; i <= accounts.length; i++) {
-        parent[i] = i;
-        rank[i] = 1;
-    }
-
-    /**
-     * @param {number} n
-     * @return {number}
-     */
-    const find = n => {
-        let p = parent[n];
-        while(p !== parent[p]) {
-            parent[p] = parent[parent[p]];
-            p = parent[p];
-        }
-        return p;
-    };
-
-    /**
-     * @param {number} n1
-     * @param {number} n2
-     */
-    const union = (n1, n2) => {
-        let p1 = find(n1);
-        let p2 = find(n2);
-
-        if(p1 === p2) {
-            return;
-        }
-
-        if(rank[p1] <= rank[p2]) {
-            parent[p1] = p2;
-            rank[p2] += rank[p1];
-        } else {
-            parent[p2] = p1;
-            rank[p1] += rank[p2];
-        }
-    };
 
     let idx = 1;
     for(let account of accounts) {
@@ -89,14 +52,14 @@ const accountsMerge = function(accounts) {
                 emails.add(email);
                 emailToAccount.set(email, idx);
             } else {
-                union(idx, emailToAccount.get(email));
+                unionFind.union(idx, emailToAccount.get(email));
             }
         }
         idx++;
     }
 
     emails.forEach(email => {
-        const a = find(emailToAccount.get(email));
+        const a = unionFind.find(emailToAccount.get(email));
         if(!accountToEmails.has(a)) {
             accountToEmails.set(a, [email]);
         } else {
@@ -118,4 +81,4 @@ const accounts =
         ["Mary", "mary@mail.com"],
         ["John", "johnnybravo@mail.com"]
     ];
-console.log(accountsMerge(accounts));
+console.table(accountsMerge(accounts));
