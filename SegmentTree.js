@@ -3,8 +3,8 @@ class SegmentTree {
         this.sum = sum;
         this.left = left;
         this.right = right;
-        this.leftNode = null;
-        this.rightNode = null;
+        this.leftTree = null;
+        this.rightTree = null;
     }
 
     static build(numbers, left, right) {
@@ -13,8 +13,8 @@ class SegmentTree {
         }
         const mid = Math.floor((left + right) / 2);
         const root = new SegmentTree(0, left, right);
-        root.left = SegmentTree.build(numbers, left, mid);
-        root.right = SegmentTree.build(numbers, mid + 1, right);
+        root.leftTree = SegmentTree.build(numbers, left, mid);
+        root.rightTree = SegmentTree.build(numbers, mid + 1, right);
         root.sum = root.left.sum + root.right.sum;
         return root;
     }
