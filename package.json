@@ -9,6 +9,7 @@
   "author": "Tri Nguyen",
   "license": "MIT",
   "dependencies": {
+    "@datastructures-js/priority-queue": "github:datastructures-js/priority-queue",
     "heap-js": "^2.3.0"
   }
 }
