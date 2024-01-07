@@ -35,13 +35,14 @@ const combine = function(n, k) {
             return;
         }
 
-        dfs(i + 1, [...currentSet]);
-        dfs(i + 1, [...currentSet, i]);
+        for(let j = i; j <= n; j++) {
+            dfs(j + 1, [...currentSet, j]);
+        }
     };
     dfs(1, []);
     return subset;
 };
 
-const n = 20;
-const k = 10;
+const n = 4;
+const k = 2;
 console.log(combine(n, k));
