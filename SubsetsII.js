@@ -21,7 +21,8 @@
  */
 const subsetsWithDup = function(nums) {
     const subset = [];
-    
+    nums.sort();
+
     const dfs = (i, currentSet) => {
         if(i >= nums.length) {
             subset.push([...currentSet]);
