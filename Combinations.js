@@ -27,9 +27,6 @@ const combine = function(n, k) {
     let subset = [];
 
     const dfs = (i, currentSet) => {
-        if(currentSet.length > k) {
-            return;
-        }
         if(currentSet.length === k) {
             subset.push([...currentSet]);
             return;
