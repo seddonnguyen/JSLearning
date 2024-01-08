@@ -20,29 +20,28 @@
 // All the integers of nums are unique.
 
 /**
+ * @param {number[]} nums
  * @return {number[][]}
- * @param word
  */
-const permute = word => {
-    const result = [];
-    const letters = word.split("");
-    const length = letters.length;
-
-    if(length === 1) {
-        return [[letters[0]]];
-    }
-    for(let i = 0; i < length; i++) {
-        let l = letters.shift();
-        let permutations = permute(letters.join(""));
-        for(let p of permutations) {
-            p.push(l);
+const permute = nums => {
+    const build = i => {
+        if(i === nums.length) {
+            return [[]];
         }
-        result.push(...permutations);
-        letters.push(l);
-    }
-    return result;
+
+        const result = [];
+        const permutations = build(i + 1);
+        for(let p of permutations) {
+            for(let j = 0; j <= p.length; j++) {
+                let copy = [...p];
+                copy.splice(j, 0, nums[i]);
+                result.push(copy);
+            }
+        }
+        return result;
+    };
+    return build(0);
 };
 
-let nums = "abcde";
-let permutations = permute(nums).map(x => x.join(""));
-console.log(permutations, permutations.length);
+let nums = [1, 2, 3];
+console.log(permute(nums));
