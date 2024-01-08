@@ -33,12 +33,13 @@ const minCostConnectPoints = function(points) {
     let totalCost = 0;
     minHeap.enqueue({node: 0, cost: 0});
 
-    while(minHeap.size() > 0 && points.length > visit.size) {
+    while(minHeap.size()) {
         const {node, cost} = minHeap.dequeue();
-        if(!visit.has(node)) {
-            totalCost += cost;
-            visit.add(node);
+        if(visit.has(node)) {
+            continue;
         }
+        totalCost += cost;
+        visit.add(node);
         for(let i = 0; i < points.length; i++) {
             if(visit.has(i)) {
                 continue;
