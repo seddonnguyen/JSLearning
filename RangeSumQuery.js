@@ -14,6 +14,7 @@
 
 /**
  * @param {number[]} nums
+ * @return {void}
  */
 const NumArray = function(nums) {
     this.prefixSum = [];

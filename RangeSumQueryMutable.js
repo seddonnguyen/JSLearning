@@ -33,6 +33,7 @@ const {SegmentTree} = require('./SegmentTree.js');
 
 /**
  * @param {number[]} nums
+ * @return {void}
  */
 const NumArray = function(nums) {
     this.root = SegmentTree.build(nums, 0, nums.length - 1);

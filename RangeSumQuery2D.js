@@ -21,6 +21,7 @@
 
 /**
  * @param {number[][]} matrix
+ * @return {void}
  */
 const NumMatrix = function(matrix) {
     this.prefixMatrix = [];
