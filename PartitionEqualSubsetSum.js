@@ -27,19 +27,22 @@ const canPartition = function(nums) {
     }
 
     let target = sum / 2;
-    let cache = new Set();
-    cache.add(0);
+    let cache = new Map();
 
-    for(let num of nums) {
-        const nextCache = new Set();
-        for(let value of cache) {
-            nextCache.add(num + value);
-            nextCache.add(value);
+    const dfs = (index, total) => {
+        if(index >= nums.length) {
+            return total === target;
         }
-        cache = nextCache;
-    }
-    return cache.has(target);
+        const key = `${index},${total}`;
+        if(cache.has(key)) {
+            return cache.get(key)
+        }
+        cache.set(key, (dfs(index + 1, total) || dfs(index + 1, total + nums[index])));
+        return cache.get(key);
+    };
+
+    return dfs(0, 0);
 };
 
-const nums = [1, 5, 11, 5];
+const nums = [1, 2, 3, 5];
 console.log(canPartition(nums));
